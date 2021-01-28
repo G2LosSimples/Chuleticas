@@ -2,6 +2,7 @@ const express = require ("express"); // Encerramos el modulo express en una cons
 const exphbs = require ("express-handlebars"); // Encerramos el modulo express-handlebars en una constante.
 const app = express(); // Almacenamos la funcion express.
 const morgan = require ("morgan");
+const indexRouter = require ("./routes/indexRouter");
 
 app.engine("hbs",exphbs({
     partialsDir:__dirname+"/views/partials", //partialsDir es una palabra reservada de handlebars y con dirname establecemos el directorio raíz.
@@ -11,4 +12,5 @@ app.engine("hbs",exphbs({
 
 app.set("view engine", "hbs");
 app.use(morgan("dev")); //configurar morgan en modo dev.
+app.use(indexRouter);
 app.listen(3000);
