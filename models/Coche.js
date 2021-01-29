@@ -24,23 +24,7 @@ const carSchema = new Schema ({
         type: String,
         required: true
         },
-    itv: {
-        type: Date,
-        required: true
-        },
-    precio_coste: {
-        type: Number,
-        required: true
-        },
     precio_venta: {
-        type: Number,
-        required: true
-        },
-    disponibilidad: {
-        type: Boolean,
-        required: true
-        },
-    stock: {
         type: Number,
         required: true
         },

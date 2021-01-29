@@ -1,7 +1,7 @@
 
 <h1>Hola k ase, compra un coche o k ase?</h1>
 {{#each muestraCoches}}
-    <section>
+   <a href="/detalleCoche/{{this._id}}"><section>
         <figure>
             <img src="{{this.foto}}">
             <figcaption>
@@ -16,5 +16,5 @@
             <p>No disponible</p>
             {{/if}}
         </article>
-    </section>
+    </section></a>
 {{/each}}
