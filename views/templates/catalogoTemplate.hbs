@@ -3,14 +3,18 @@
 {{#each muestraCoches}}
     <section>
         <figure>
-            <img src="">
+            <img src="{{this.foto}}">
             <figcaption>
+                {{this.marca}}
+                {{this.modelo}}
             </figcaption>
         </figure>
         <article>
-            <p>Marca</p>
-            <p>Modelo</p>
-            <p>Disponibilidad</p>
+            {{#if this.disponibilidad}}
+            <p>Disponible</p>
+            {{else}}
+            <p>No disponible</p>
+            {{/if}}
         </article>
     </section>
 {{/each}}
