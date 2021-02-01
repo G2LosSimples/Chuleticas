@@ -1,8 +1,5 @@
 const Coche = require("../models/Coche");
 const cocheController = {}; 
-// cocheController.createNewCoche = async (req,res) => {
-//     const {Marca, Modelo, Color, Anio, Combustible, Transmision, ITV, Precio_coste, Precio_venta, Disponibilidad, Stock, Foto}
-// }
 
 cocheController.mostrarListaCoches = async (req,res) => {
     const coches = await Coche.find().lean();
@@ -20,7 +17,6 @@ cocheController.renderFormularioCrear = (req,res) => {
 }
 
 cocheController.crearCoche = async (req,res) => {
- 
     const coche = new Coche(req.body);
     await coche.save();
     res.redirect("/listadoCoches");
@@ -35,8 +31,16 @@ cocheController.modificarCoche = async (req, res) => {
     await Coche.findOneAndUpdate({})
 }
 
-cocheController.renderFormularioEditar = (req, res) => {
-    res.render("")
+cocheController.renderFormularioEditar = async (req, res) => {
+    const cocheDetalle = await Coche.findById({_id:req.params.id}).lean();
+    res.render("templates/formularioUpdate", cocheDetalle);
+}
+
+cocheController.editarCoche = async (req, res) => {
+    const filter = {_id:req.params.id};
+    const update = req.body;
+    await Coche.findByIdAndUpdate(filter, update);
+    res.redirect("/listadoCoches");
 }
 
 module.exports = cocheController;

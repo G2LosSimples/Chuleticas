@@ -1,29 +1,28 @@
-<form action="/editarCoche" method="POST"> {{!--  url a la que mandamos el contenido del formulario --}}
+<form action="/editarCoche/{{this._id}}" method="POST"> {{!--  url a la que mandamos el contenido del formulario --}}
      <fieldset> {{!--NOMBRE DE INPUT TIENE QUE COINCIDIR CON LOS ATRIBUTOS DEL MODELO!!! --}}
          <label for="marca">Marca</label>
-         <input name="marca"type="text" placeholder="{{this.marca}}">
+         <input name="marca"type="text" value="{{this.marca}}">
 
-          <label for="modelo">Modelo</label>
-         <input name="modelo"type="text" placeholder="{{this.modelo}}">
+         <label for="modelo">Modelo</label>
+         <input name="modelo"type="text" value="{{this.modelo}}">
 
-          <label for="color">Color</label>
-         <input name="color"type="text" placeholder="{{this.color}}">
+         <label for="color">Color</label>
+         <input name="color"type="text" value="{{this.color}}">
 
-          <label for="anio">Año</label>
-         <input name="anio"type="text" placeholder="{{this.anio}}">
+         <label for="anio">Año</label>
+         <input name="anio"type="text" value="{{this.anio}}">
 
-
-          <label for="combustible">Combustible</label>
-         <input name="combustible"type="text" placeholder="{{this.combustible}}">
+         <label for="combustible">Combustible</label>
+         <input name="combustible"type="text" value="{{this.combustible}}">
 
          <label for="transmision">Transmisión</label>
-         <input name="transmision"type="text" placeholder="{{this.transmision}}">
+         <input name="transmision"type="text" value="{{this.transmision}}">
 
          <label for="precio_venta">Precio venta</label>
-         <input name="precio_venta"type="text" placeholder="{{this.precio_venta">
+         <input name="precio_venta"type="text" value="{{this.precio_venta}}">
 
          <label for="foto">Foto</label>
-         <input name="foto"type="text" placeholder="{{this.foto}}">
+         <input name="foto"type="text" value="{{this.foto}}">
 
          <input value="Enviar"type="submit">
     </fieldset> 
