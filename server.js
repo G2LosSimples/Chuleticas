@@ -4,6 +4,7 @@ const app = express(); // Almacenamos la funcion express.
 const morgan = require ("morgan");
 const indexRouter = require ("./routes/indexRouter");
 const cocheRouter = require ("./routes/cocheRouter");
+
 require("./connection");
 
 app.engine("hbs",exphbs({
@@ -11,6 +12,9 @@ app.engine("hbs",exphbs({
     layoutsDir: __dirname+"/views/layouts",
     extname: "hbs" // Palabra reservada para establecer la extensión de los archivos.
 }));
+
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 app.set("view engine", "hbs");
 app.use(morgan("dev")); //configurar morgan en modo dev.

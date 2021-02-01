@@ -3,6 +3,10 @@ const router = express.Router();
 const cocheController = require("../controllers/cocheController");
 
 router.get("/listadoCoches", cocheController.mostrarListaCoches);
-router.get("/detalleCoche/:id", cocheController.mostrarListaCoches);
+router.get("/urlDetalleCoche/:id", cocheController.mostrarDetallesCoche);
+router.get("/formularioCoche", cocheController.renderFormularioCrear);
+router.post("/crearCoche", cocheController.crearCoche);
+router.get("/borrarCoche/:id", cocheController.borrarCoche)
+router.get("/formularioEditar/:id", cocheController.renderFormularioEditar)
 
 module.exports = router;

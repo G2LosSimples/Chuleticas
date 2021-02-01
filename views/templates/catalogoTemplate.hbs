@@ -1,20 +1,22 @@
 
 <h1>Hola k ase, compra un coche o k ase?</h1>
 {{#each muestraCoches}}
-   <a href="/detalleCoche/{{this._id}}"><section>
-        <figure>
-            <img src="{{this.foto}}">
-            <figcaption>
-                {{this.marca}}
-                {{this.modelo}}
-            </figcaption>
-        </figure>
-        <article>
-            {{#if this.disponibilidad}}
-            <p>Disponible</p>
-            {{else}}
-            <p>No disponible</p>
-            {{/if}}
-        </article>
-    </section></a>
+   <a href="/urlDetalleCoche/{{this._id}}">
+        <section>
+             <figure>
+                 <img src="{{this.foto}}">
+                 <figcaption>
+                     {{this.marca}}
+                     {{this.modelo}}
+                 </figcaption>
+             </figure>
+             <article>
+                 {{#if this.disponibilidad}}
+                 <p>Disponible</p>
+                 {{else}}
+                 <p>No disponible</p>
+                 {{/if}}
+             </article>
+         </section>
+    </a>
 {{/each}}
