@@ -1,5 +1,5 @@
-<form action="/editarCoche/{{this._id}}" method="POST"> {{!--  url a la que mandamos el contenido del formulario --}}
-     <fieldset> {{!--NOMBRE DE INPUT TIENE QUE COINCIDIR CON LOS ATRIBUTOS DEL MODELO!!! --}}
+<form action="/editarCoche/{{this._id}}" method="POST"> {{!Se crea aquí en el front la url en la que se llama al controlador (a través del router) que permite editar un nuevo coche identificado mediante su id (que almaceno en su url mediante la sintaxis this.id), .editarCoche}}
+     <fieldset> {{!El name del input tiene que coincidir con los atributos del modelo models/Coche.js}}
          <label for="marca">Marca</label>
          <input name="marca"type="text" value="{{this.marca}}">
 

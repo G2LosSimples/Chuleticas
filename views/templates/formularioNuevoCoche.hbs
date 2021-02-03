@@ -1,5 +1,5 @@
-<form action="/crearCoche" method="POST"> {{!--  url a la que mandamos el contenido del formulario --}}
-     <fieldset> {{!--NOMBRE DE INPUT TIENE QUE COINCIDIR CON LOS ATRIBUTOS DEL MODELO!!! --}}
+<form action="/crearCoche" method="POST"> {{!Se crea aquí en el front la url en la que se llama al cotrolador (a través del router) que permite crear un nuevo coche utilizando el new Coche, que enlaza con el models/coche requerido en cocheController}}
+     <fieldset> {{!El name del input tiene que coincidir con los atributos del modelo models/Coche.js}}
          <label for="marca">Marca</label>
          <input name="marca"type="text" placeholder="Marca">
 

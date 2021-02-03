@@ -1,7 +1,7 @@
 
 <h1>Hola k ase, compra un coche o k ase?</h1>
-{{#each muestraCoches}}
-   <a href="/urlDetalleCoche/{{this._id}}">
+{{#each muestraCoches}} {{! este helper "oficial" itera sobre una lista. Dentro del bloque hay que referir cada elemento con this (ej: this.foto)}}
+   <a href="/urlDetalleCoche/{{this._id}}"> {{!se crea aquí en el front una url que me va a permitir ejecutar la ruta que entra en el detalle del coche}}
         <section>
              <figure>
                  <img src="{{this.foto}}">

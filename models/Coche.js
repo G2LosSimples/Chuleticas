@@ -1,4 +1,4 @@
-const {Schema, model} = require ("mongoose");
+const {Schema, model} = require ("mongoose"); //Se llama al Schema y al model de Mongoose --> desectructurado
 const carSchema = new Schema ({
     marca: {
         type: String,
@@ -34,4 +34,5 @@ const carSchema = new Schema ({
         }
 });
 
-module.exports = model("Coche", carSchema, "coches");
+module.exports = model("Coche", carSchema, "coches"); 
+//Exportar el Schema creado para usarlo por ejemplo en cocheController. (1º nombre del modelo js que exportamos, 2º cómo se llama en nuevoSchema, 3º cómo ase registra la colección en mongoDB)

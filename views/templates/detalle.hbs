@@ -1,11 +1,11 @@
-{{#with detalleCoche}}
+{{#with detalleCoche}} {{!helper "oficial" que muestra lo que contiene dentro}}
 <figure>
     <img src="{{this.foto}}" alt="Foto coche">
 </figure>
 <h1>{{this.marca }} {{this.modelo}}</h1>
 <h2>{{this.combustible}} {{this.color}}</h2>
-<p>transmision: {{this.transmision}} precio venta: {{this.precio_venta}}</p>
-<a href="/formularioEditar/{{this._id}}">Editar</a>
- <a href="/borrarCoche/{{this._id}}">Borrar</a>
+<p>transmision: {{this.transmision}} precio venta: {{this.precio_venta}}</p>    
+ <a href="/formularioEditar/{{this._id}}">Editar</a> {{!Se crea aquí en el front un link con la url que va a llevar a la ruta que activa el controlador que permite editar un coche (cocheController.renderFormularioEditar). Ese controlador va a renderizar el formulario para editar algún campo del objeto}}
+ <a href="/borrarCoche/{{this._id}}">Borrar</a> {{!Se crea aquí en el front un link con la url que va a llevar a la ruta que activa el controlador que permite eliminar un coche (cocheController.borrarCoche). Esta url incluye la _id de ese coche concreto (this._id porque es la sintaxis obligada por hbs para referir elementos)}}
 
 {{/with}}
