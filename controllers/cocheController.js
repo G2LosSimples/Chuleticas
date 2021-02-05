@@ -21,7 +21,6 @@ cocheController.crearCoche = async (req,res) => { //El formulario "template/form
     res.redirect("/listadoCoches");
 }
 
-<<<<<<< Updated upstream
 cocheController.borrarCoche = async (req,res) => { //Coche.deleteOne hace referencia al model en models/coche.js, y va a eliminar ese refgistro utilizando
     await Coche.deleteOne({_id:req.params.id}); //la _id que se le envía desde el front a través de la url creada en el <a> de la template "detalle" y borra
     res.redirect("/listadoCoches");//el objeto con esa id. Redirecciona a /listadoCoches --> muestra el registro "actualizado" sin el coche borrado.
@@ -30,11 +29,6 @@ cocheController.borrarCoche = async (req,res) => { //Coche.deleteOne hace refere
 cocheController.renderFormularioEditar = async (req, res) => { //Renderiza la template "formularioUpdate", form que tiene la url /editarCoche/this.id
     const cocheDetalle = await Coche.findById({_id:req.params.id}).lean(); //que permitirá editar ese objeto concreto. cocheDetalle encuentra por el coche q
     res.render("templates/formularioUpdate", cocheDetalle);//se va a editar --> renderiza su formulario concreto con los datos registrados en DB.
-=======
-cocheController.renderFormularioEditar = async (req, res) => {
-    const cocheDetalle = await Coche.findById({_id:req.params.id}).lean();
-    res.render("templates/formularioUpdate", cocheDetalle);
->>>>>>> Stashed changes
 }
 
 cocheController.editarCoche = async (req, res) => { //Controlador que va a permitir de verdad modificar datos de un registro ya guardado en la DB.
